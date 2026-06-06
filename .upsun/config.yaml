@@ -1,22 +1,11 @@
 applications:
-  proxy:
+  app:
     type: nodejs:20
-    source:
-      root: "/"
-    web:
-      commands:
-        start: "node proxy.js"
-      upstream:
-        socket_family: "tcp"
-      locations:
-        "/":
-          allow: true
-          passthru: true
 
 routes:
   https://{default}/:
     type: proxy
-    to: https://134.122.52.175:80
+    to: http://134.122.52.175:80
   http://{default}/:
     type: redirect
     to: https://{default}
