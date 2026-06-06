@@ -8,4 +8,4 @@ routes:
     to: http://134.122.52.175:80
   http://{default}/:
     type: redirect
-    to: https://{default}
+    to: https://{default}/
